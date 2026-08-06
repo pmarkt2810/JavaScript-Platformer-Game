@@ -1,0 +1,228 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to left, #283e51, #4b79a1);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+.gameContainer{
+    margin-top: 60px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px #000;
+}
+.ui{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 800px;
+}
+#gameArea{
+    position: relative;
+    width: 800px;
+    height: 550px;
+    background: linear-gradient(to bottom, #5c94fc 88%, #228b22 88%, #228b22 100%);
+    border: 2px solid #333;
+    overflow: hidden;
+}
+#gameWorld{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4000px;
+    height: 550;
+}
+#mario{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/mario.png');
+    z-index: 100;   
+}
+#mario.big{
+    width: 30px;
+    height: 30px;
+    background-image: url('img/mario.png');
+}
+.platform{
+    position: absolute;
+    background-image: url('img//red-bricks.png');
+    background-size: 20px 20px;
+    background-repeat: repeat;
+}
+.platform.ground{
+    position: absolute;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    background-image: url('img/platform1.png');
+}
+.platform.floating{
+    position: absolute;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    background-image: url('img/platform1.png');
+}
+.platform.blue{
+    position: absolute;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    background-image: url('img/platform2.png');
+}
+.enemy.brown{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/brown-enemy.gif');
+}
+.enemy.purple{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/blue-enemy.gif');
+}
+.rocket{
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/black-enemy');
+}
+.fireball{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/fireBall.gif');
+}
+.mushroom {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('img/mushroom.png');
+}
+.coin{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('img/coin.png');
+    animation: coinSpin 1s linear infinite;
+}
+@keyframes coinSpin {
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+.surpriseBlock{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('img/surprise-block.png');
+}
+.surpriseBlock.hit{ 
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('img/surprise-block-hit.png');
+}
+.pipe{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+.pipeTop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/pipe-top.png');
+}
+.pipeTopRight{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/pipe-topRight.png');
+}
+.pipeBottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/pipe-bottom.png');
+}
+.pipeBottomRight{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('img/pipe-bottomRight.png');
+}
+.controls{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+#gameOver{
+    position: absolute;
+    top: 50%;
+    border: 3px solid #fff;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    display: none;
+}
+#restartBtn{
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px;
+}
+#restartBtn:hover{
+    background-color: #ff5252;
+}
+@media (max-width: 850px) {
+    .gameContainer{
+        width: 90vw;
+    }
+    #gameArea{
+        width: 90vw;
+    }
+    .ui{
+        min-width: 90vw;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Clone Game</title>
+    <link rel="icon" href="img/title.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="gameContainer">
+        <div class="ui">
+            <p>Score: <span id="score">0</span></p>
+            <p>Levels: <span id="level">1</span></p>
+            <p>Lives: <span id="lives">3</span></p>
+        </div>
+
+        <div id="gameArea">
+            <div id="gameWorld">
+                <div id="mario"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <p>Controls</p>
+            <p>Arrow Keys: Move Left/Right</p>
+            <p>Space: Jump</p>
+            <p>Down Arrow: Enter Pipe</p>
+        </div>
+    </div>
+
+    <div id="gameOver">
+        <h2 id="gameOverTitle">Game Over</h2>
+        <p>Score: <span id="finalScore">0</span></p>
+        <button id="restartBtn">Play Again</button>
+    </div>
+    
+    <script src="javaScript/helpers.js"></script>    
+    <script src="javaScript/levels.js"></script>
+    <script src="javaScript/player.js"></script>
+    <script src="javaScript/collision.js"></script>
+    <script src="javaScript/game.js"></script>
+    <script src="javaScript/main.js"></script>
+
+</body>
+</html>
